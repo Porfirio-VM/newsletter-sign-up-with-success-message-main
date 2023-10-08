@@ -4,9 +4,7 @@
 
 ## Welcome! 👋
 
-This is my first frontend project, using only HTML, CSS and javascript.
-
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+This is my first frontend project, using only HTML, ***CSS and javascript.***
 
 ## The challenge
 
