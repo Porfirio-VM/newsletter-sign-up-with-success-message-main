@@ -24,3 +24,9 @@ The users should be able to:
 
 - Solution URL: https://github.com/Porfirio-VM/newsletter-sign-up-with-success-message-main
 - Live Site URL: https://newsletter-sign-up-pjvm.netlify.app
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
