@@ -22,5 +22,5 @@ The users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://github.com/Porfirio-VM/newsletter-sign-up-with-success-message-main
 - Live Site URL: https://newsletter-sign-up-pjvm.netlify.app
