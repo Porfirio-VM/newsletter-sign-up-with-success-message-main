@@ -20,12 +20,12 @@ The users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Links
+## Links
 
 - Solution URL: https://github.com/Porfirio-VM/newsletter-sign-up-with-success-message-main
 - Live Site URL: https://newsletter-sign-up-pjvm.netlify.app
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
