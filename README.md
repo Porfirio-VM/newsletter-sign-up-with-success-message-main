@@ -4,9 +4,7 @@
 
 ## Welcome! 👋
 
-Thanks for checking out this front-end coding challenge.
-
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+This is my first frontend project, using only HTML, CSS and javascript.
 
 **To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
