@@ -1,32 +1,46 @@
-window.onload = () =>{
-    const btn = document.getElementById('sub');
-    const email = document.getElementById('mail');
-    inputListener(email, btn);
+const main =  document.querySelector('.newsletter')
+const modal = document.querySelector('.modal')
+const form = document.getElementById('newsletter');
+const dimissButton = document.querySelector('.modal__button')
+const input = document.getElementById('mail')
+
+function handleOnSubmit(e){ // handle a form submission, obtains the data of form
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData (e.target))
+    handleErrors(data.mail)
 }
 
-const inputListener = (email, btn) =>{
-    const warning = document.querySelector('.warning');
-    const form = document.querySelector('.container');
-    const modal = document.querySelector('.popup');
-    const bMail = document.getElementById('bmail');
-    const returnBtn = document.getElementById('return');
+function handleReset(){
+    main.style.display = 'flex'
+    modal.style.display = 'none'
+    input.style.cssText = '';
+    errors.innerText = ''; 
+}
 
-    btn.addEventListener('click', function(e){
-        e.preventDefault();
-        mail = email.value;
-        const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        mail === '' ? (warning.innerText = 'This field is empty', email.classList.replace('neutral','bad_input')) : 
-        !regex.test(mail) ? (warning.innerText = 'Invalid Email', email.classList.replace('neutral','bad_input')) : (form.style.display = 'none', modal.style.display = 'block', bMail.innerText = mail);    
-    });
+function handleErrors(data){
+    const userMail = document.getElementById('setEmail');
+    const errors = document.getElementById('errors')
+  if(data === ''){
+        input.style.cssText = 'border-color: var(--tomato); background-color: #FFE1DE';
+        errors.innerText = 'This field is required'
+    }else if(!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(data )){
+        input.style.cssText = 'border-color: var(--tomato); background-color: #FFE1DE';
+        errors.innerText = 'Valid email required'
+    }else{
+        userMail.innerText = data 
+        main.style.display = 'none'
+        modal.style.display = 'flex'
+        form.reset();
+    }
+}
 
-    email.addEventListener('input', function(){
-        mail = email.value;
-        mail === ''|mail !=='' ? (email.classList.replace('bad_input', 'neutral'), warning.innerText = ''): null;
+window.onload = () =>{ //It ensures that the JavaScript code within it runs after all the page's elements are ready.
+
+    form.addEventListener('submit', (e)=>{ //adds event listener to the form element
+        handleOnSubmit(e)
     })
-
-    returnBtn.addEventListener('click', function (){
-        email.value = '';
-        form.style.display = 'flex';
-        modal.style.display = 'none';
-    });
+    
+    dimissButton.addEventListener('click',() =>{ //adds event listener to the dimmis element
+        handleReset()
+    })
 }
