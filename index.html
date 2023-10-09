@@ -3,63 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
-  <section class="main">
-    <div class="container">
-      <form action="" class="form_up">
-        <div class="form_cont">
-          <h1>Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul>
-            <li>
-              <div class="item_container">
-                <img src="assets/images/icon-list.svg" alt="">
-                <p>Product discovery and building what matters</p>
-              </div>
-            </li>
-            <li>
-              <div class="item_container">
-                <img src="assets/images/icon-list.svg" alt="">
-                <p>Measuring to ensure updates are a success</p>
-              </div>
-            </li>
-            <li>
-              <div class="item_container">
-                <img src="assets/images/icon-list.svg" alt="">
-                <p>And much more!</p>
-              </div>
-            </li>
-          </ul>
-          <div class="header_input">
-            <label for="">Email address</label>
-            <span><label class="warning"></label></span>
-          </div>
-          <input type="email" class="neutral" id="mail" placeholder="Email here">
-          <input type="submit" id="sub" class="sub" value="Subscribe to monthly newsletter">
-        </div>
+
+  <main class="newsletter">
+    <section class="newsletter__info">
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+      <form id="newsletter">
+        <label for="mail" class="mail">Email Address<span id="errors"></span></label>
+        <input type="email" name="mail" id="mail" placeholder="email@company.com">
+        <input type="submit" value="Subscribe to monthly newsletter">
       </form>
-      <div class="image">
-        <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
-      </div>
-    </div>
+    </section>
+    <section class="newsletter__image">
+      <picture>
+        <source srcset="./assets/images/illustration-sign-up-mobile.svg" media="(max-width: 640px)">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+      </picture>
+    </section>
+  </main>
 
-    <div class="popup">
-      <div class="header_popup">
-        <img src="assets/images/icon-success.svg" alt="">
-      </div>
-      <div class="container_popup">
-        <h1>Thanks for subscribing!</h1>
-        <p>A confirmation Email has been sent to <b id="bmail"></b> Please open it and click the button inside to confirm subscription</p>
-        <button id="return">Dimmis Message</button>
-      </div>
-
-  </section> 
+  <!-- modal to be displayed when confirming the email -->
+  <div class="modal">
+    <picture>
+      <img src="/assets/images/icon-success.svg" alt="">
+    </picture>
+    <h1 class="modal__thanks">Thanks for subscribing!</h1>
+    <p class="modal__p">A confirmation Email has been sent to <strong id="setEmail"></strong> Please open it and click the button inside to confirm subscription</p>
+    <button class="modal__button">Dimmis message</button>
   </div>
+
 </body>
 <script src="main.js"></script>
 </html>
